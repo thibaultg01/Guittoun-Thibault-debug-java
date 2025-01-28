@@ -10,9 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WriteSymptomDataToFile implements ISymptomWriter {
+	private String filepath;
+	public WriteSymptomDataToFile(String filepath) {
+		this.filepath = filepath;
+	}
+	@Override
 		public void writeSymptoms(Map<String, Integer> symptoms) {
-			File file = new File(System.getProperty("user.dir")+"/Guittoun-Thibault-debug-java/Project02Eclipse/result.out");
-	        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+	        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filepath))) {
 	            for (Map.Entry<String, Integer> entry : symptoms.entrySet()) {
 	                writer.write(entry.getKey() + ": " + entry.getValue());
 	                writer.newLine();
