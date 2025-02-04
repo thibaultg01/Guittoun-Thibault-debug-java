@@ -1,14 +1,16 @@
 package com.hemebiotech.analytics;
 
-import java.util.List;
 import java.util.Map;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
+/**
+ * La classe WriteSymptomDataToFile est une implémentation de l'interface ISymptomWriter
+ * pour écrire les données des symptômes dans un fichier spécifié.
+ *
+ * Cette classe prend un nom de fichier en entrée lors de l'instanciation et écrit une map des symptômes
+ */
 public class WriteSymptomDataToFile implements ISymptomWriter {
 	private String filepath;
 	public WriteSymptomDataToFile(String filepath) {
